@@ -1,0 +1,335 @@
+* {
+    padding: 0px; 
+    margin: 0px;
+}
+
+body {
+    background-color: wheat;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+.header {
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(87, 43, 14);
+    color: white;
+    text-align: center;
+}
+
+.content {
+    height: 90vh;
+    width: 100vw;
+}
+
+.pointShowcase {
+    display: grid;
+    grid-template-columns: 10vw 10vw 60vw 10vw 10vw;
+    grid-template-rows: 10vh;
+    justify-items: center;
+    align-items: center;
+}
+
+#yourPic, #botPic {
+    height: 100%;
+}
+
+#yourPoint, #botPoint {
+    font-size: 3em;
+    text-align: center;
+    border-radius: 30%;
+    animation-name: blinking_animation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinking_animation {
+    0% {border-bottom: 2px solid rgb(56, 28, 10);}
+    33% {border-left: 2px solid rgb(56, 28, 10);}
+    66% {border-top: 2px solid rgb(56, 28, 10);}
+    99% {border-right: 2px solid rgb(56, 28, 10);}
+}
+
+/* ///////// */
+
+.screen {
+    height: 80vh;
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 10% 10% auto 10%;
+}
+
+#yourMove, #botMove {
+    height: 33vh;
+    width: 33vh;
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+}
+
+#questionText {
+    grid-column: 1/ 9;
+    grid-row: 1/ 2;
+}
+
+.buttons {
+    grid-column: 1/ 9;
+    grid-row: 2/ 3;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+button {
+    height: 100%;
+    width: 20%;
+    background-color: rgb(87, 43, 14);
+    color: wheat;
+    font-size: 110%;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: rgb(145, 80, 37);
+    cursor:pointer;
+    font-size: 150%;
+}
+
+#yourMove {
+    grid-column: 1/5;
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+}
+#botMove {
+    grid-column: 5/9;
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+}
+
+#yourMoveWrite {
+    grid-column: 1/5;
+    grid-row: 4/5;
+    color: rgb(87, 43, 14);
+    font-size: 2em;
+    text-align: center;
+}
+
+#botMoveWrite {
+    grid-column: 5/9;
+    grid-row: 4/5;
+    color: rgb(87, 43, 14);
+    font-size: 2em;
+    text-align: center;
+}
+
+.history {
+    grid-column: 9/-1;
+    grid-row: 3/-1;
+    border-left: 5px solid rgb(231, 200, 142);;
+    text-align: center;
+    overflow-y: auto;
+}
+
+
+.historyElement {
+    width: 90%;
+    background-color: rgb(225, 173, 77);
+    margin-top: 10px;
+    font-size: 150%;
+    color: wheat;
+}
+
+
+.chat-bubble {
+    max-width: 500px;
+    width: 500px;
+    padding: 30px;
+    background-color: rgb(145, 80, 37);
+    color: white;
+    position:fixed;
+    top: 24vh;
+    right: 3vw;
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    visibility: hidden;
+}
+
+.chat-bubble::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 90%;
+    top: -40px;
+    display: block;
+    border: 20px solid transparent;
+    border-bottom: 20px solid rgb(145, 80, 37);
+}
+
+.endGame {
+    height: 80vh;
+    width: 80vw;
+    position: fixed;
+    background-color: rgb(145, 80, 37);
+    top: 12vh;
+    left: 10vw;
+    border-radius: 30px;
+
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.lost-won {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    color: rgb(56, 28, 10);
+    border: 2px solid rgb(87, 43, 14)
+}
+
+.retry {
+    height: 5vh;
+    font-size: 200%;
+}
+
+.retry:hover {
+    background-color: rgb(225, 173, 77);
+    color: rgb(87, 43, 14);
+}
+
+.endScreenHistory {
+    width: 50%;
+    overflow-y: auto;
+}
+.endScreenHistory div {
+    padding: 10px;
+}
+
+
+@media (max-width: 1200px) {
+    h2 {
+        font-size: 25px;
+    }
+    .screen {
+        height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 10% 10% 50% 10%;
+        
+    }
+    #yourPic, #botPic {
+        height: 100%;
+        width: 100%
+    }
+    
+    #yourMove, #botMove {
+        height: 45vh;
+        width: 45vh;
+    }
+
+    #questionText {
+        grid-column: 1/ -1;
+        grid-row: 1/ 2;
+    }
+
+    .buttons {
+        grid-column: 1/ -1;
+        grid-row: 2/ 3;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    button {
+        height: 100%;
+        width: 20%;
+        background-color: rgb(87, 43, 14);
+        color: wheat;
+        font-size: 100%;
+        border-radius: 50px;
+    }
+
+    button:hover {
+        background-color: rgb(87, 43, 14);
+        font-size: 100%;
+    }
+    .lost-won {
+        border-radius: 30px;
+        width: 85%;
+        text-align: center;
+    }
+    .retry {
+        height: 10vh;
+        width: 50vw;
+    }
+
+    #yourMove {
+        grid-column: 1/7;
+        grid-row: 3/4;
+        width: 100%;
+        height: 80%;
+    }
+    #botMove {
+        grid-column: 7/-1;
+        grid-row: 3/4;
+        width: 100%;
+        height: 80%;
+    }
+
+    #yourMoveWrite {
+        grid-column: 1/6;
+       
+    }
+
+    #botMoveWrite {
+        grid-column: 8/-1;
+
+    }
+
+    /* button {
+        font-size: 10px;
+    } */
+
+    .history {
+        grid-column: 1/-1;
+        grid-row: 5/-1;
+        border-top: 5px solid rgb(231, 200, 142);;
+        display: flex;
+        justify-content: center;
+        display: grid;
+        grid-gap: 20px;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(100, 40px);
+        height: 300px;
+    }
+
+    .historyElement {
+        height: 40px;
+        
+    }
+    .chat-bubble {
+        max-width: 100px;
+        font-size: 30px;
+        position: fixed;
+    }
+    .chat-bubble::after {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        left: 70%;
+        top: -35px;
+        display: block;
+        border: 20px solid transparent;
+        border-bottom: 20px solid rgb(145, 80, 37);
+    }
+
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div class="header">
+        <p>ROCK-PAPER-SCISSORS</p>
+        <h2>Powered By Khandaker Ziaur Rahman</h2>
+    </div>
+
+    <div class="content">
+        <div class="pointShowcase">
+            <img id = "yourPic" src ="you.png">
+            <div id="yourPoint">0</div>
+            <div></div>
+            <div id="botPoint">0</div>
+            <img id = "yourPic" src = "bot.png">
+        </div>
+        <div class="screen">
+            <h1 id = "questionText" style = "text-align: center;">Rock Paper or Scissors??</h1>
+            <div class="buttons">
+                <button id = "rock">ROCK</button>
+                <button id = "paper">PAPER</button>
+                <button id = "scissor">SCISSOR</button>
+            </div>
+            
+         
+            <div id = "yourMove"></div>
+            <div id = "botMove"></div>
+            <p id = "yourMoveWrite">Your Move</p>
+            <p id = "botMoveWrite">Bot's Move</p>
+            <div class = "history">
+                <div class = "historyElement" style = "background-color:  rgb(87, 43, 14);">History</div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="chat-bubble"></div>
+    <script src = "script.js"></script>
+
+    <div class = "endGame">
+        <h1 class = "lost-won"></h1>
+        <button class = "retry">Play Again</button>
+    </div>
+</body>
+</html>
